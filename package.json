@@ -35,8 +35,8 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "ds-alurabooks-base",
-  "author": "vinicios neves",
+  "name": "ds-alurabooks-jaderson",
+  "author": "jaderson rodrigues",
   "module": "dist/ds-alurabooks-base.esm.js",
   "size-limit": [
     {
