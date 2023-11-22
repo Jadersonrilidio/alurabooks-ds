@@ -1,24 +1,42 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-const StyledButton = styled.button`
-  background: #EB9B00;
+export interface AbButtonProps {
+  text?: string
+  type?: "primary" | "secondary"
+  onClick?: () => void
+}
+
+const StyledButton = styled.button<AbButtonProps>`
+  background: ${(props: AbButtonProps) => props.type === "primary" ? "#EB9B00" : "#FFFFFF"};
   padding: 16px 32px;
   border: 2px solid #EB9B00;
-  color: #FFFFFF;
+  color: ${(props: AbButtonProps) => props.type === "primary" ? "#FFFFFF" : "#EB9B00"};
   font-size: 20px;
   font-weight: 700;
   cursor: pointer;
-  &:hover {
-    background: #B87900;
-    border: 2px solid #B87900;
+  ${(props: AbButtonProps) => props.type === "primary"
+    ? css`&:hover {
+        background: #B87900;
+        border: 2px solid #B87900;
+      }`
+    : css`&:hover {
+        background: #FFFFFF;
+        border: 2px solid #B87900;
+        color: #B87900;
+      }`
   }
+  /* &:hover {
+    background: ${(props: AbButtonProps) => props.type === "primary" ? "#B87900" : "#FFFFFF"};
+    border: 2px solid #B87900;
+    color: ${(props: AbButtonProps) => props.type === "primary" ? "#FFFFFF" : "#B87900"};
+  } */
 `;
 
-export const AbButton: React.FC = () => {
+export const AbButton: React.FC<AbButtonProps> = ({ text, type = "primary", onClick }) => {
   return (
-    <StyledButton>
-      Clique aqui!
+    <StyledButton type={type} onClick={onClick}>
+      {text}
     </StyledButton>
   );
 };
