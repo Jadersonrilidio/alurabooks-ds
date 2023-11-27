@@ -4,7 +4,7 @@ name: Release
 # The event that will trigger the action
 on:
   push:
-    branches: [main]
+    branches: [master]
 
 # what the action will do
 jobs:
@@ -33,7 +33,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # npm token, see https://storybook.js.org/tutorials/design-systems-for-developers/react/en/distribute/ to obtain it
-          # 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
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           yarn install --frozen-lockfile
