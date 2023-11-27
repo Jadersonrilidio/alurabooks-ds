@@ -15,13 +15,13 @@ jobs:
     if: "!contains(github.event.head_commit.message, 'ci skip') && !contains(github.event.head_commit.message, 'skip ci')"
     # The list of steps that the action will go through
     steps:
-      - uses: actions/checkout@v2
-      - name: Prepare repository
-        run: git fetch --unshallow --tags
       - name: Use Node.js 16.x
         uses: actions/setup-node@v1
         with:
           node-version: 16.x
+      - uses: actions/checkout@v2
+      - name: Prepare repository
+        run: git fetch --unshallow --tags
       - name: Cache node modules
         uses: actions/cache@v1
         with:
