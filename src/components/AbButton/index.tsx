@@ -26,11 +26,6 @@ const StyledButton = styled.button<AbButtonProps>`
         color: #B87900;
       }`
   }
-  /* &:hover {
-    background: ${(props: AbButtonProps) => props.type === "primary" ? "#B87900" : "#FFFFFF"};
-    border: 2px solid #B87900;
-    color: ${(props: AbButtonProps) => props.type === "primary" ? "#FFFFFF" : "#B87900"};
-  } */
 `;
 
 export const AbButton: React.FC<AbButtonProps> = ({ text, type = "primary", onClick }) => {

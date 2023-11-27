@@ -5,9 +5,9 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 export default {
   title: "Components/AbButton",
   component: AbButton
-} as ComponentMeta<typeof AbButton>
+} as ComponentMeta<typeof AbButton>;
 
-const Template: ComponentStory<typeof AbButton> = (args) => <AbButton {...args}/>;
+const Template: ComponentStory<typeof AbButton> = args => <AbButton {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
