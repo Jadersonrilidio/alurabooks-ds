@@ -38,4 +38,3 @@ jobs:
           yarn install --frozen-lockfile
           yarn build
           yarn release
-
